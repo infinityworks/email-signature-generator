@@ -3,9 +3,7 @@ const fs = require('fs');
 
 const config = require('./config.json');
 
-handlebars.registerHelper('toUpperCase', function(str) {
-    return str.toUpperCase();
-});
+handlebars.registerHelper('toUpperCase', (str) => str.toUpperCase());
 
 var template = handlebars.compile(fs.readFileSync('./signature.html', 'utf8'));
 var generated = template(config);
